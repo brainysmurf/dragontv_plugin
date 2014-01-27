@@ -11,7 +11,7 @@ class OffcampusController(BaseController):
 		return dict(
 			title="That location is unavailable",
 			message = "You must be at SSIS and have your VPN turned off for full access to DragonTV.",
-			redirect = "You will now be redirected to an available area.",
+			redirect = "You will now automatically be redirected to an available area.",
 			)
 
 __controller__ = OffcampusController

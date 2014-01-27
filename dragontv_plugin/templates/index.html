@@ -1,5 +1,7 @@
 <!--!
 
+Derived from the login page since that provides a pretty convenient little number
+to do what we want in this case.
 
 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -9,7 +11,7 @@
       xmlns:xi="http://www.w3.org/2001/XInclude">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Log in to ${h.page_title()}</title>
+	<title>That location is unavailable</title>
 	<link href="${h.url_for('/styles/base.css')}" media="screen" rel="stylesheet" type="text/css" />
 	<link href="${h.url_for('/styles/login.css')}" media="screen" rel="stylesheet" type="text/css" />
 	<link href="${h.url_for('/appearance/appearance.css')}" media="screen" rel="stylesheet" type="text/css" />
@@ -21,6 +23,10 @@
 	//-->
 	</script>
 </head>
+<!-- 
+Javascript (defined above) redirects the user to the /podcasts area
+which is available anywhere.
+-->
 <body onLoad="setTimeout('delayer()', 10000)" class="mcore-body mcore-login">
     <div class="logo-container"
         py:with="show_logo = bool(settings['appearance_display_logo'] and settings['appearance_logo'])">
@@ -42,7 +48,7 @@
 	    <div class="box">
             <h1 class="box-head">${title}</h1>
             <div class="box-content">${message}</div>
-            <div class="box-content">Please <a href="http://sites.ssis-suzhou.net/helpdesk/2014/01/27/access-to-dragontv/">click here</a> to view more information.</div>
+            <div class="box-content">You may: <ul><li><a href="/login">Login</a></li><li><a href="/upload">Upload</a></li><li> <a target="_new" href="http://sites.ssis-suzhou.net/helpdesk/2014/01/27/access-to-dragontv/">View more information</a></li></ul></div>
             <div class="box-content">${redirect}</div>
     	</div>
 	</div>
