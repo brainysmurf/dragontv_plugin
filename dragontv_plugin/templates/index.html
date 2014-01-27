@@ -1,0 +1,49 @@
+<!--!
+
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Log in to ${h.page_title()}</title>
+	<link href="${h.url_for('/styles/base.css')}" media="screen" rel="stylesheet" type="text/css" />
+	<link href="${h.url_for('/styles/login.css')}" media="screen" rel="stylesheet" type="text/css" />
+	<link href="${h.url_for('/appearance/appearance.css')}" media="screen" rel="stylesheet" type="text/css" />
+	<script type="text/javascript">
+	<!--
+	function delayer(){
+    	window.location = "/podcasts/"
+	}
+	//-->
+	</script>
+</head>
+<body onLoad="setTimeout('delayer()', 10000)" class="mcore-body mcore-login">
+    <div class="logo-container"
+        py:with="show_logo = bool(settings['appearance_display_logo'] and settings['appearance_logo'])">
+        <h1 id="${show_logo and 'mcore-logo' or 'mcore-site-title'}">
+	        <a href="${h.url_for('/')}">${settings['general_site_name']}</a>
+        </h1>
+    </div>
+
+    <div id="login-page">
+	<!--[if IE]>
+		<div id="ie-warning-wrapper">
+			<div id="ie-warning">
+				<strong>Internet Explorer is unsupported!</strong><br />
+				Your browsing experience will be subpar,<br />
+				Please update to <a href="http://getfirefox.com/">a better browser</a>.
+			</div>
+		</div>
+	<![endif]-->
+	    <div class="box">
+            <h1 class="box-head">${title}</h1>
+            <div class="box-content">${message}</div>
+            <div class="box-content">${redirect}</div>
+    	</div>
+	</div>
+</body>
+</html>
