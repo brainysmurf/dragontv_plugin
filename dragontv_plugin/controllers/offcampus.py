@@ -10,7 +10,7 @@ class OffcampusController(BaseController):
     def index(self, **kwargs):
 		return dict(
 			title="That location is unavailable",
-			message = "The area you tried to navigate to is unavailable. You must be at SSIS and have your VPN turned off.",
+			message = "You must be at SSIS and have your VPN turned off for full access to DragonTV.",
 			redirect = "You will now be redirected to an available area.",
 			)
 
